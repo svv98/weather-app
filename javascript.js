@@ -1,3 +1,24 @@
+/* const header = document.querySelector('header');
+header.addEventListener('click', (event)=>{
+  if(event.target.closest('.dropdownMenu')){
+    let menu = event.target.closest('.dropdownMenu');
+    let dropdownButton = menu.querySelector('.dropdownButton');
+    dropdownButton.classList.toggle('active');
+    let dropdownOptions = menu.querySelector('.dropdownOptions');
+    dropdownOptions.classList.toggle('visible');
+
+    menu.addEventListener('mouseleave', ()=>{
+      dropdownButton.classList.remove('active');
+      dropdownOptions.classList.remove('visible');
+    })
+    dropdownOptions.addEventListener('click', (event)=>{
+      if(event.target.closest('.dropdownOptionButton')){
+        console.log(event.target.closest('.dropdownOptionButton').textContent);
+      }
+    })
+  }
+}); */
+
 /* async function fetchData() {
   const response = await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/ciudad%20obregon/next7days?unitGroup=metric&key=NR5QUCS2CDR3W7FMEY6KGLPLV&contentType=json");
   response.json().then(function(response) {
@@ -6,6 +27,7 @@
 }
 
 fetchData(); */
+
 
 let weatherData = {
   "resolvedAddress": "ciudad obregon",

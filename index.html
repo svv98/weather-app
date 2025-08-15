@@ -7,7 +7,68 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <header>
+        <div class="mainIcon">
+            <img src="./media/solar-eclipse.svg">
+        </div>
+        <form class="search">
+            <input type="text" id="place" name="searchedPlace" placeholder="Search City">
+            <button type="submit" class="searchPlace">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier"> 
+                        <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#ffffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> 
+                    </g>
+                </svg>
+            </button>
+        </form>
+        <div class="degrees dropdownMenu">
+            <button class = 'navButton dropdownButton'> 
+                <img class="degreeIcon" src="./media/weather-data/nav-degrees/thermometer-celsius.svg" >
+                <img src="./media/arrow-down-338-svgrepo-com.svg">
+            </button>
+            <div class = 'dropdownOptions'>
+                <button class = 'dropdownOptionButton'> °F </button>
+                <button class = 'dropdownOptionButton'> °C </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="currentInfo">
+            <div class="currentInfoHeader">
+                <div class="city">Ciudad Obregon, Mexico</div>
+                <div class="currentHour">18:28 hrs</div>
+            </div>
+            <div class="currentInfoData">
+                <div class="currentTemp">
+                    <div class="currentTempData"><span>35</span>°</div>
+                    <img class="currentConditionIcon" src="./media/condition-icons/partly-cloudy-day.svg">
+                    <div class="currentConditionData">Partially cloudy</div>
+                </div>
+                <div class="currentTempFeels">
+                    <div class="currentTempFeelsLabel">Feels Like</div>
+                    <div class="currentTempFeelsData"><span>42</span>°</div>
+                </div>
+                <div class="currentImportantInfo">
+                    <div class="currentUVIndex">
+                        <img class="currentUVIndexData currentIcon" src="./media/weather-data/uv-index/uv-index.svg">
+                        <div class="currentUVIndexData currentData">0</div>
+                    </div>
+                    <div class="currentHumidity">
+                        <img class="currentHumidityData currentIcon" src="./media/weather-data/humidity.svg">
+                        <div class="currentHumidityData currentData"><span>42</span>%</div>
+                    </div>
+                    <div class="currentRain">
+                        <img class="currentRainData currentIcon" src="./media/weather-data/raindrops.svg">
+                        <div class="currentRainData currentData"><span>0</span>%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="todayInfo"></section>
+        <section class="nextDaysInfo"></section>
+    </main>
     <script src="javascript.js"></script>
 </body>
 </html>
