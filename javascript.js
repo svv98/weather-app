@@ -20,7 +20,7 @@ header.addEventListener('click', (event)=>{
 }); */
 
 /* async function fetchData() {
-  const response = await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/ciudad%20obregon/next7days?unitGroup=metric&key=NR5QUCS2CDR3W7FMEY6KGLPLV&contentType=json");
+  const response = await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/guadalajara/next7days?unitGroup=metric&key=NR5QUCS2CDR3W7FMEY6KGLPLV&contentType=json");
   response.json().then(function(response) {
     console.log(response);
   });
@@ -200,3 +200,25 @@ let weatherData = {
 }
 
 
+/* const sunrise = new Date();
+sunrise.setHours(5, 48, 0);
+const sunset = new Date();
+sunset.setHours(19, 0, 0); 
+
+const sunIcon = document.querySelector('.sunIcon');
+const sunLine = document.querySelector('.sunLine');
+
+function updateSunPosition() {
+  const now = new Date();
+  const progress = (now - sunrise) / (sunset - sunrise);
+  if (progress < 0 || progress > 1) {
+    sunLine.style.display = 'none';
+    return;
+  } else {
+    sunLine.style.display = 'block';
+  }
+  sunIcon.style.left = `calc(${progress*100}% - ${sunIcon.offsetWidth / 2}px)`;
+}
+
+updateSunPosition();
+setInterval(updateSunPosition, 60000); */

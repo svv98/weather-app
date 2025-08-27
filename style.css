@@ -1,17 +1,13 @@
-/* img {
-    background-color: red;
-    -webkit-mask: url(logo.svg) no-repeat center;
-    mask: url(logo.svg) no-repeat center;
-} */
-
 body {
     min-width: 320px;
     min-height: 320px;
     font-family: sans-serif;
+    background-color: rgba(202, 202, 202, 0.329);
 }
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 header{
@@ -123,8 +119,16 @@ header{
 
 main{
     padding: 0 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "currentInfoSection currentInfoSection"
+    "todayInfoSection todayInfoSection"
+    "nextDaysInfoSection nextDaysInfoSection";
+    gap: 10px;
 }
 .currentInfo{
+    grid-area: currentInfoSection;
     background-image: url(./media/condition-backgrounds/partly-cloudy-day.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -210,5 +214,260 @@ img.currentConditionIcon{
     gap: 5px;
 }
 .currentIcon{
+    width: 60%;
+    height: 80%;
+    margin: auto;
+}
+.currentUVIndex>.currentIcon{
     width: 100%;
+}
+
+
+.todayInfo img{
+    width: 50px;
+}
+.todayInfo{
+    grid-area: todayInfoSection;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.todayInfo>.cityTodaysInfo>p{
+    font-weight: bold;
+    font-size: 16px;
+}
+.feelsMoonSunToday {
+    display: grid;
+    grid-template: 1fr auto / 1fr 1fr;
+    border-radius: 10px;
+    gap: 5px;
+}
+.feelsMoonSunToday>div {
+    border-radius: 10px;
+    background-color: rgba(207, 207, 207, 0.2);
+    padding: 10px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+.feelsMoonSunToday .label {
+    font-weight: bold;
+    font-size: 12px;
+}
+.feelsMoonSunToday .data {
+    font-size: 14px;
+    text-shadow: 0 0 2px rgba(3, 3, 3, 0.4);
+}
+.feelsLikeToday {
+    grid-column: span 2;
+    width: fit-content;
+}
+.feelsLikeToday>p.label {
+    font-size: 15px;
+}
+.feelsLikeToday>p.feelsTempToday {
+    font-size: 40px;
+    text-shadow: 0 0 5px rgba(3, 3, 3, 0.4);
+}
+.moonToday {
+    grid-area: 1/1/2/2;
+    display: flex;
+    flex-direction: column;
+}
+.moonToday>img {
+    width: 75px;
+    align-self: center;
+}
+.sunToday {
+    grid-area: 1/2/2/3;
+    text-align: center;
+}
+.sunLine {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.sunriseSunset {
+    display: flex;
+    justify-content: space-between;
+}
+.sunIconToday{
+    clip-path: inset(20% 10% 20% 10%);
+    margin-bottom: -15px;
+}
+.line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    border: 2px solid rgba(104, 103, 103, 0.2);
+}
+.sunIcon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('./media/condition-icons/clear-day.svg') no-repeat center/cover;
+    top: 55%;
+    transform: translateY(-55%);
+}
+.highLowToday {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+}
+.highLowToday>div {
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+    display: grid;
+    grid-template: auto auto / auto 1fr;
+    grid-template-areas: 
+    "tempIconToday highlowTempLabel"
+    "tempIconToday highlowTempData";
+    gap: 5px;
+    align-items: center;
+}
+.highLowToday .tempIconToday {
+    grid-area: tempIconToday;
+    height: 70%;
+}
+.highLowToday .label {
+    grid-area: highlowTempLabel;
+    font-weight: bold;
+    font-size: 15px;
+    align-self: flex-end;
+}
+.highLowToday .data {
+    grid-area: highlowTempData;
+    font-size: 25px;
+    align-self: flex-start;
+}
+.highToday {
+    width: 100%;
+}
+.lowToday {
+    width: 100%;
+}
+.dayDataToday {
+    padding: 10px;
+    display:  flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.dayDataToday img {
+    height: 25px;
+    width: 25px;
+}
+.dayDataToday>div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border-bottom: 1px solid rgb(211, 211, 211);
+}
+.dayDataToday .label {
+    width: fit-content;
+    text-wrap: nowrap;
+    font-weight: bold;
+    font-size: 15px;
+}
+.dayDataToday .data {
+    width: 100%;
+    font-size: 15px;
+    text-align: right;
+}
+.dayDataToday .data>span {
+    font-size: 16px;
+}
+.descriptionToday {
+    padding: 10px;
+    font-size: 15px;
+}
+
+.nextDaysInfo{
+    grid-area: nextDaysInfoSection;
+    background-color: rgba(255, 255, 255, 0.774);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.nextDaysTitle {
+    font-weight: bold;
+    font-size: 16px;
+}
+.daysInfoDIV {
+    background-color: rgb(214, 214, 214);
+    border-radius: 10px;
+}
+.daysInfoDIV>.daysInfo {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 40px min-content 1fr min-content 30px;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.daysInfoDIV>.daysInfo:hover{
+    background-color: rgb(187, 187, 187);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.212);
+    cursor: pointer;
+}
+.daysInfo>.date {
+    text-align: center;
+}
+.daysInfo>.highLow{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.daysInfo>.highLow>div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.daysInfo>.highLow>div>img{
+    height: 15px;
+}
+.conditionDIV {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+    text-wrap: wrap ;
+    padding: 5px;
+}
+.conditionDIV>img{
+    height: 50px;
+}
+.rainChanceDIV {
+    text-align: center;
+}
+.rainChanceDIV>img{
+    height: 30px;
+}
+.moreInfoButton {
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: rgb(66, 66, 66);
+}
+.daysInfoDIV>.daysInfo:hover .moreInfoButton{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 5px black;
+    cursor: pointer;
+}
+
+@media(width>=500px){
+    
 }

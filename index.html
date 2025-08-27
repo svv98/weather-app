@@ -66,8 +66,247 @@
                 </div>
             </div>
         </section>
-        <section class="todayInfo"></section>
-        <section class="nextDaysInfo"></section>
+        <section class="todayInfo">
+            <div class="cityTodaysInfo">
+                <p class="cityToday"><span>Ciudad Obregon</span> Today</p>
+                <p class="dateToday">Monday 11/August/2025</p>
+            </div>
+            <div class="feelsMoonSunToday">
+                <div class="moonToday">
+                    <img class="moonIconToday" src="./media/moon-phases/moon-waning-gibbous.svg">
+                    <p class="label">Moon Phase</p>
+                    <p class="moonPhase data">Waning Gibbous</p>
+                </div>
+                <div class="sunToday">
+                    <div class="sunLine">
+                        <div class="line"></div>
+                        <div class="sunIcon"></div>
+                    </div>
+                    <div class="sunriseSunset">
+                        <div class="sunriseToday">
+                            <img class="sunIconToday" src="./media/weather-data/sunrise.svg">
+                            <p class="sunrise data"><span>5:48</span> AM</p>
+                            <p class="label">Sunrise</p>
+                        </div>
+                        <div class="sunsetToday">
+                            <img class="sunIconToday" src="./media/weather-data/sunset.svg">
+                            <p class="sunset data"><span>19:00</span> PM</p>
+                            <p class="label">Sunset</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feelsLikeToday">
+                    <p class="label">Feels Like</p>
+                    <p class="feelsTempToday"><span>42</span>°</p>
+                </div>
+            </div>
+            <div class="highLowToday">
+                <div class="highToday">
+                    <img class="tempIconToday" src="./media/weather-data/thermometer-warmer.svg">
+                    <p class="label">High</p>
+                    <p class="highTempToday data"><span>39</span>°</p>
+                </div>
+                <div class="lowToday">
+                    <img class="tempIconToday" src="./media/weather-data/thermometer-colder.svg">
+                    <p class="label">Low</p>
+                    <p class="lowTempToday data"><span>26</span>°</p>
+                </div>
+            </div>
+            <div class="dayDataToday">
+                <div class="humidityToday">
+                    <img src="./media/weather-data/humidity.svg">
+                    <p class="label">Humidity</p>
+                    <p class="humidityDataToday data"><span>59</span>%</p>
+                </div>
+                <div class="preciProbToday">
+                    <img src="./media/weather-data/raindrops.svg">
+                    <p class="label">Rain Chance</p>
+                    <p class="preciProbDataToday data"><span>32</span>%</p>
+                </div>
+                <div class="dewPointToday">
+                    <img src="./media/weather-data/thermometer-raindrop.svg">
+                    <p class="label">Dew Point</p>
+                    <p class="dewPointDataToday data"><span>22</span>°</p>
+                </div>
+                <div class="pressureToday">
+                    <img src="./media/weather-data/barometer.svg">
+                    <p class="label">Pressure</p>
+                    <p class="pressureDataToday data"><span>1011</span> mmHg</p>
+                </div>
+                <div class="windToday">
+                    <img src="./media/weather-data/wind-alert.svg">
+                    <p class="label">Wind</p>
+                    <p class="windDataToday data"><span>13</span> km/h</p>
+                </div>
+                <div class="uvIndexToday">
+                    <img src="./media/weather-data/uv-index/uv-index-today.svg">
+                    <p class="label">UV Index</p>
+                    <p class="uvIndexDataToday data"><span>10</span> / 11</p>
+                </div>
+            </div>
+            <div class="descriptionToday">
+                <p class="descriptionDataToday">Partly cloudy throughout the day with strong storms possible.</p>
+            </div>
+        </section>
+        <section class="nextDaysInfo">
+            <p class="nextDaysTitle">7 Day Weather</p>
+            <div class="daysInfoDIV">
+                <div class="daysInfo day0">
+                    <p class="date day0">Mon 11</p>
+                    <div class="highLow day0">
+                        <div class="high day0">
+                            <img src="./media/weather-data/high.svg">
+                            <p><span>40</span>°</p>
+                        </div>
+                        <div class="low day0">
+                            <img src="./media/weather-data/low.svg">
+                            <p><span>20</span>°</p>
+                        </div>
+                    </div>
+                    <div class="conditionDIV day0">
+                        <img src="./media/condition-icons/partly-cloudy-day.svg">
+                        <p class="condition day0">Partially Cloudy</p>
+                    </div>
+                    <div class="rainChanceDIV day0">
+                        <img src="./media/weather-data/raindrops.svg">
+                        <p class="rainChance day0"><span>70</span>%</p>
+                    </div>
+                    <button id="day0" class="moreInfoButton">+</button>
+                </div>
+                <div class="daysInfo day1">
+                    <p class="date day1">Tue 12</p>
+                    <div class="highLow day0">
+                        <div class="high day0">
+                            <img src="./media/weather-data/high.svg">
+                            <p><span>40</span>°</p>
+                        </div>
+                        <div class="low day0">
+                            <img src="./media/weather-data/low.svg">
+                            <p><span>20</span>°</p>
+                        </div>
+                    </div>                    
+                    <div class="conditionDIV day1">
+                        <img src="./media/condition-icons/partly-cloudy-day.svg">
+                        <p class="condition day1">Partially Cloudy</p>
+                    </div>
+                    <div class="rainChanceDIV day1">
+                        <img src="./media/weather-data/raindrops.svg">
+                        <p class="rainChance day1"><span>70</span>%</p>
+                    </div>
+                    <button id="day1" class="moreInfoButton">+</button>
+                </div>
+                <div class="daysInfo day2">
+                    <p class="date day2">Wed 13</p>
+                    <div class="highLow day0">
+                        <div class="high day0">
+                            <img src="./media/weather-data/high.svg">
+                            <p><span>40</span>°</p>
+                        </div>
+                        <div class="low day0">
+                            <img src="./media/weather-data/low.svg">
+                            <p><span>20</span>°</p>
+                        </div>
+                    </div>                    
+                    <div class="conditionDIV day2">
+                        <img src="./media/condition-icons/partly-cloudy-day.svg">
+                        <p class="condition day2">Partially Cloudy</p>
+                    </div>
+                    <div class="rainChanceDIV day2">
+                        <img src="./media/weather-data/raindrops.svg">
+                        <p class="rainChance day2"><span>70</span>%</p>
+                    </div>
+                    <button id="day2" class="moreInfoButton">+</button>
+                </div>
+                <div class="daysInfo day3">
+                    <p class="date day3">Thu 14</p>
+                    <div class="highLow day0">
+                        <div class="high day0">
+                            <img src="./media/weather-data/high.svg">
+                            <p><span>40</span>°</p>
+                        </div>
+                        <div class="low day0">
+                            <img src="./media/weather-data/low.svg">
+                            <p><span>20</span>°</p>
+                        </div>
+                    </div>                    
+                    <div class="conditionDIV day3">
+                        <img src="./media/condition-icons/partly-cloudy-day.svg">
+                        <p class="condition day3">Partially Cloudy</p>
+                    </div>
+                    <div class="rainChanceDIV day3">
+                        <img src="./media/weather-data/raindrops.svg">
+                        <p class="rainChance day3"><span>70</span>%</p>
+                    </div>
+                    <button id="day3" class="moreInfoButton">+</button>
+                </div>
+                <div class="daysInfo day4">
+                    <p class="date day4">Fri 15</p>
+                    <div class="highLow day0">
+                        <div class="high day0">
+                            <img src="./media/weather-data/high.svg">
+                            <p><span>40</span>°</p>
+                        </div>
+                        <div class="low day0">
+                            <img src="./media/weather-data/low.svg">
+                            <p><span>20</span>°</p>
+                        </div>
+                    </div>                    
+                    <div class="conditionDIV day4">
+                        <img src="./media/condition-icons/partly-cloudy-day.svg">
+                        <p class="condition day4">Partially Cloudy</p>
+                    </div>
+                    <div class="rainChanceDIV day4">
+                        <img src="./media/weather-data/raindrops.svg">
+                        <p class="rainChance day4"><span>70</span>%</p>
+                    </div>
+                    <button id="day4" class="moreInfoButton">+</button>
+                </div>
+                <div class="daysInfo day5">
+                    <p class="date day5">Sat 16</p>
+                    <div class="highLow day0">
+                        <div class="high day0">
+                            <img src="./media/weather-data/high.svg">
+                            <p><span>40</span>°</p>
+                        </div>
+                        <div class="low day0">
+                            <img src="./media/weather-data/low.svg">
+                            <p><span>20</span>°</p>
+                        </div>
+                    </div>                    
+                    <div class="conditionDIV day5">
+                        <img src="./media/condition-icons/partly-cloudy-day.svg">
+                        <p class="condition day5">Partially Cloudy</p>
+                    </div>
+                    <div class="rainChanceDIV day5">
+                        <img src="./media/weather-data/raindrops.svg">
+                        <p class="rainChance day5"><span>70</span>%</p>
+                    </div>
+                    <button id="day5" class="moreInfoButton">+</button>
+                </div>
+                <div class="daysInfo day6">
+                    <p class="date day6">Sun 17</p>
+                    <div class="highLow day0">
+                        <div class="high day0">
+                            <img src="./media/weather-data/high.svg">
+                            <p><span>40</span>°</p>
+                        </div>
+                        <div class="low day0">
+                            <img src="./media/weather-data/low.svg">
+                            <p><span>20</span>°</p>
+                        </div>
+                    </div>                    
+                    <div class="conditionDIV day6">
+                        <img src="./media/condition-icons/partly-cloudy-day.svg">
+                        <p class="condition day6">Partially Cloudy</p>
+                    </div>
+                    <div class="rainChanceDIV day6">
+                        <img src="./media/weather-data/raindrops.svg">
+                        <p class="rainChance day6"><span>70</span>%</p>
+                    </div>
+                    <button id="day6" class="moreInfoButton">+</button>
+                </div>
+            </div>
+        </section>
     </main>
     <script src="javascript.js"></script>
 </body>
