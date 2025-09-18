@@ -240,6 +240,13 @@ img.currentConditionIcon{
     font-weight: bold;
     font-size: 16px;
 }
+.feelsLikeToday>p.label {
+    font-size: 18px;
+}
+.feelsLikeToday>p.feelsTempToday {
+    font-size: 40px;
+    text-shadow: 0 0 5px rgba(3, 3, 3, 0.4);
+}
 .feelsMoonSunToday {
     display: grid;
     grid-template: 1fr auto / 1fr 1fr;
@@ -260,19 +267,8 @@ img.currentConditionIcon{
     font-size: 14px;
     text-shadow: 0 0 2px rgba(3, 3, 3, 0.4);
 }
-.feelsLikeToday {
-    grid-column: span 2;
-    width: fit-content;
-}
-.feelsLikeToday>p.label {
-    font-size: 15px;
-}
-.feelsLikeToday>p.feelsTempToday {
-    font-size: 40px;
-    text-shadow: 0 0 5px rgba(3, 3, 3, 0.4);
-}
 .moonToday {
-    grid-area: 1/1/2/2;
+    grid-area: 2/1/3/2;
     display: flex;
     flex-direction: column;
 }
@@ -281,7 +277,7 @@ img.currentConditionIcon{
     align-self: center;
 }
 .sunToday {
-    grid-area: 1/2/2/3;
+    grid-area: 2/2/3/3;
     text-align: center;
 }
 .sunLine {
@@ -469,5 +465,387 @@ img.currentConditionIcon{
 }
 
 @media(width>=500px){
-    
+    .search input{
+        height: 50%;
+        font-size: 18px;
+    }
+    .searchPlace{
+        border: none;
+        background-color: transparent;
+    }
+    .search svg {
+        width: 70%;
+    }
+
+    .degrees .degreeIcon{
+        width: 80%;
+        justify-self: right;
+    }
+    .dropdownOptionButton{
+        font-size: 18px;
+    }
+
+    .currentInfoHeader{
+        font-size: 18px;
+    }
+    .currentInfoData{
+        grid-template-columns: 60% 40%;
+        grid-template-areas: 
+        "currentTemp currentTempFeels"
+        "currentImportantInfo currentImportantInfo";
+    }
+    .currentTempFeels{
+        gap: 10px;
+    }
+    .currentTempFeelsData{
+        font-size: 70px;
+    }
+    .currentImportantInfo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .currentIcon{
+        width: 40px;
+        height: 35px;
+        margin: auto;
+    }
+    .currentData {
+        font-size: 20px;
+    }
+
+    .todayInfo>.cityTodaysInfo>p{
+        font-size: 16px;
+    }
+    .feelsMoonSunToday .label {
+        font-size: 15px;
+    }
+    .feelsMoonSunToday .data {
+        font-size: 17px;
+    }
+    .feelsLikeToday>p.label {
+        font-size: 17px;
+    }
+    .feelsLikeToday>p.feelsTempToday {
+        font-size: 60px;
+    }
+    .moonToday>img {
+        width: 100px;
+    }
+    .sunLine {
+        height: 60px;
+    }
+    .sunIcon {
+        width: 60px;
+        height: 60px;
+    }
+    .highLowToday .label {
+        font-size: 18px;
+    }
+    .highLowToday .data {
+        font-size: 30px;
+    }
+    .dayDataToday {
+        display:  grid;
+        grid-template: 1fr 1fr 1fr / 1fr 1fr;
+        gap: 15px;
+    }
+    .dayDataToday .label {
+        font-size: 16px;
+    }
+    .dayDataToday .data {
+        font-size: 16px;
+    }
+    .dayDataToday .data>span {
+        font-size: 17px;
+    }
+    .descriptionToday {
+        font-size: 16px;
+    }
+
+    .nextDaysTitle {
+        font-size: 18px;
+    }
+    .daysInfoDIV>.daysInfo {
+        grid-template-columns: 50px 1fr 2fr 1fr 40px;
+        gap: 20px;
+    }
+    .daysInfo>.date {
+        font-size: 17px;
+    }
+    .daysInfo>.highLow>div>img{
+        height: 18px;
+    }
+    .conditionDIV {
+        font-size: 16px;
+    }
+    .conditionDIV>img{
+        height: 70px;
+    }
+    .rainChanceDIV>img{
+        height: 35px;
+    }
+    .rainChance {
+        font-size: 16px;
+    }
+    .moreInfoButton {
+        font-size: 25px;
+    }
+}
+
+@media(width>=800px){
+    header{
+        padding: 0 5px;
+        display: grid;
+        grid-template-columns: 100px 1fr 100px;
+        height: 100px;
+    }
+    .search input{
+        width: 80%;
+        height: 50%;
+        font-size: 18px;
+        justify-self: right;
+    }
+    .search svg {
+        width: 30%;
+        margin-left: -60px;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "currentInfoSection currentInfoSection"
+        "todayInfoSection nextDaysInfoSection";
+        gap: 10px;
+        max-width: 100%;
+    }
+    .currentInfoHeader{
+        font-size: 20px;
+    }
+    .currentInfoData{
+        grid-template-columns: 60% 20% 20%;
+        grid-template-areas: 
+        "currentTemp currentTempFeels currentImportantInfo";
+    }
+    .currentTempData{
+        font-size: 90px;
+    }
+    .currentConditionData{
+        font-size: 30px;
+    }
+    .currentTempFeels{
+        gap: 0px;
+    }
+    .currentTempFeelsData{
+        font-size: 70px;
+    }
+    .currentTempFeels{
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
+    .currentTempFeelsLabel{
+        font-size: 20px;
+    }
+    .currentTempFeelsData{
+        font-size: 70px;
+        margin: auto;
+    }
+    .currentImportantInfo{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .currentIcon{
+        width: 40px;
+        height: 45px;
+        margin: auto;
+    }
+    .currentData {
+        font-size: 20px;
+    }
+
+    .todayInfo {
+        height: fit-content;
+    }
+    .todayInfo>.cityTodaysInfo>p{
+        font-size: 18px;
+    }
+    .feelsMoonSunToday .label {
+        font-size: 18px;
+    }
+    .feelsMoonSunToday .data {
+        font-size: 20px;
+    }
+    .feelsLikeToday>p.label {
+        font-size: 18px;
+    }
+    .feelsLikeToday>p.feelsTempToday {
+        font-size: 70px;
+    }
+    .moonToday>img {
+        width: 120px;
+    }
+    .sunLine {
+        height: 70px;
+    }
+    .sunIcon {
+        width: 70px;
+        height: 70px;
+    }
+    .highLowToday .label {
+        font-size: 18px;
+    }
+    .highLowToday .data {
+        font-size: 50px;
+    }
+    .dayDataToday {
+        display:  grid;
+        grid-template: 1fr 1fr 1fr / 1fr 1fr;
+        gap: 15px;
+    }
+    .dayDataToday .label {
+        font-size: 18px;
+    }
+    .dayDataToday .data {
+        font-size: 17px;
+    }
+    .dayDataToday .data>span {
+        font-size: 18px;
+    }
+    .descriptionToday {
+        font-size: 18px;
+    }
+
+    .nextDaysTitle {
+        font-size: 20px;
+    }
+    .daysInfo>.highLow>div>img{
+        height: 17px;
+    }
+    .conditionDIV {
+        font-size: 17px;
+    }
+    .conditionDIV>img{
+        height: 72px;
+    }
+    .rainChanceDIV>img{
+        height: 37px;
+    }
+    .rainChance {
+        font-size: 17px;
+    }
+    .moreInfoButton {
+        font-size: 27px;
+    }
+}
+
+@media(width>=1000px){
+    header{
+        grid-template-columns: 120px 1fr 120px;
+        height: 110px;
+    }
+    .search input{
+        height: 40%;
+        font-size: 19px;
+    }
+
+    main{
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 
+        "currentInfoSection currentInfoSection"
+        "todayInfoSection nextDaysInfoSection";
+        gap: 10px;
+    }
+    .currentInfoHeader{
+        font-size: 21px;
+    }
+    .currentTempData{
+        font-size: 100px;
+    }
+    .currentConditionData{
+        font-size: 35px;
+    }
+    .currentTempFeelsData{
+        font-size: 70px;
+    }
+    .currentTempFeelsData>span{
+        font-size: 80px;
+    }
+    .currentTempFeelsLabel{
+        font-size: 25px;
+    }
+    .currentIcon{
+        width: 50px;
+        height: 50px;
+    }
+    .currentData {
+        font-size: 30px;
+    }
+
+    .todayInfo>.cityTodaysInfo>p{
+        font-size: 21px;
+    }
+    .feelsMoonSunToday .label {
+        font-size: 19px;
+    }
+    .feelsMoonSunToday .data {
+        font-size: 21px;
+    }
+    .feelsLikeToday>p.label {
+        font-size: 19px;
+    }
+    .feelsLikeToday>p.feelsTempToday {
+        font-size: 80px;
+    }
+    .moonToday>img {
+        width: 130px;
+    }
+    .sunLine {
+        height: 80px;
+    }
+    .sunIcon {
+        width: 80px;
+        height: 80px;
+    }
+    .highLowToday .label {
+        font-size: 20px;
+    }
+    .highLowToday .data {
+        font-size: 60px;
+    }
+    .dayDataToday .label {
+        font-size: 19px;
+    }
+    .dayDataToday .data {
+        font-size: 18px;
+    }
+    .dayDataToday .data>span {
+        font-size: 19px;
+    }
+    .descriptionToday {
+        font-size: 19px;
+    }
+
+    .nextDaysTitle {
+        font-size: 21px;
+    }
+    .daysInfo>.highLow>div>img{
+        height: 20px;
+    }
+    .conditionDIV {
+        font-size: 18px;
+    }
+    .conditionDIV>img{
+        height: 75px;
+    }
+    .rainChanceDIV>img{
+        height: 45px;
+    }
+    .rainChance {
+        font-size: 19px;
+    }
+    .moreInfoButton {
+        font-size: 30px;
+    }
 }

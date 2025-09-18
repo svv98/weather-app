@@ -25,12 +25,12 @@
         </form>
         <div class="degrees dropdownMenu">
             <button class = 'navButton dropdownButton'> 
-                <img class="degreeIcon" src="./media/weather-data/nav-degrees/thermometer-celsius.svg" >
+                <img class="degreeIcon" src="./media/weather-data/nav-degrees/thermometer-metric.svg" >
                 <img src="./media/arrow-down-338-svgrepo-com.svg">
             </button>
             <div class = 'dropdownOptions'>
-                <button class = 'dropdownOptionButton'> °F </button>
-                <button class = 'dropdownOptionButton'> °C </button>
+                <button class = 'dropdownOptionButton' value="us">°F</button>
+                <button class = 'dropdownOptionButton' value="metric">°C</button>
             </div>
         </div>
     </header>
@@ -38,7 +38,7 @@
         <section class="currentInfo">
             <div class="currentInfoHeader">
                 <div class="city">Ciudad Obregon, Mexico</div>
-                <div class="currentHour">18:28 hrs</div>
+                <div class="currentHour"><span>18:28</span> hrs</div>
             </div>
             <div class="currentInfoData">
                 <div class="currentTemp">
@@ -68,8 +68,12 @@
         </section>
         <section class="todayInfo">
             <div class="cityTodaysInfo">
-                <p class="cityToday"><span>Ciudad Obregon</span> Today</p>
+                <p class="cityToday">Ciudad Obregon</p>
                 <p class="dateToday">Monday 11/August/2025</p>
+            </div>
+            <div class="feelsLikeToday">
+                <p class="label">Feels Like</p>
+                <p class="feelsTempToday"><span>42</span>°</p>
             </div>
             <div class="feelsMoonSunToday">
                 <div class="moonToday">
@@ -94,10 +98,6 @@
                             <p class="label">Sunset</p>
                         </div>
                     </div>
-                </div>
-                <div class="feelsLikeToday">
-                    <p class="label">Feels Like</p>
-                    <p class="feelsTempToday"><span>42</span>°</p>
                 </div>
             </div>
             <div class="highLowToday">
@@ -152,7 +152,7 @@
             <p class="nextDaysTitle">7 Day Weather</p>
             <div class="daysInfoDIV">
                 <div class="daysInfo day0">
-                    <p class="date day0">Mon 11</p>
+                    <p class="date day0">Mon <br> 11</p>
                     <div class="highLow day0">
                         <div class="high day0">
                             <img src="./media/weather-data/high.svg">
@@ -174,7 +174,7 @@
                     <button id="day0" class="moreInfoButton">+</button>
                 </div>
                 <div class="daysInfo day1">
-                    <p class="date day1">Tue 12</p>
+                    <p class="date day1">Tue <br> 12</p>
                     <div class="highLow day0">
                         <div class="high day0">
                             <img src="./media/weather-data/high.svg">
@@ -196,7 +196,7 @@
                     <button id="day1" class="moreInfoButton">+</button>
                 </div>
                 <div class="daysInfo day2">
-                    <p class="date day2">Wed 13</p>
+                    <p class="date day2">Wed <br> 13</p>
                     <div class="highLow day0">
                         <div class="high day0">
                             <img src="./media/weather-data/high.svg">
@@ -218,7 +218,7 @@
                     <button id="day2" class="moreInfoButton">+</button>
                 </div>
                 <div class="daysInfo day3">
-                    <p class="date day3">Thu 14</p>
+                    <p class="date day3">Thu <br> 14</p>
                     <div class="highLow day0">
                         <div class="high day0">
                             <img src="./media/weather-data/high.svg">
@@ -240,7 +240,7 @@
                     <button id="day3" class="moreInfoButton">+</button>
                 </div>
                 <div class="daysInfo day4">
-                    <p class="date day4">Fri 15</p>
+                    <p class="date day4">Fri <br> 15</p>
                     <div class="highLow day0">
                         <div class="high day0">
                             <img src="./media/weather-data/high.svg">
@@ -262,7 +262,7 @@
                     <button id="day4" class="moreInfoButton">+</button>
                 </div>
                 <div class="daysInfo day5">
-                    <p class="date day5">Sat 16</p>
+                    <p class="date day5">Sat <br> 16</p>
                     <div class="highLow day0">
                         <div class="high day0">
                             <img src="./media/weather-data/high.svg">
@@ -284,7 +284,7 @@
                     <button id="day5" class="moreInfoButton">+</button>
                 </div>
                 <div class="daysInfo day6">
-                    <p class="date day6">Sun 17</p>
+                    <p class="date day6">Sun <br> 17</p>
                     <div class="highLow day0">
                         <div class="high day0">
                             <img src="./media/weather-data/high.svg">
