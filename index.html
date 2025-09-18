@@ -116,42 +116,42 @@
                 <div class="humidityToday">
                     <img src="./media/weather-data/humidity.svg">
                     <p class="label">Humidity</p>
-                    <p class="humidityDataToday data"><span>59</span>%</p>
+                    <p class="humidityDataToday data"><span></span>%</p>
                 </div>
                 <div class="preciProbToday">
                     <img src="./media/weather-data/raindrops.svg">
                     <p class="label">Rain Chance</p>
-                    <p class="preciProbDataToday data"><span>32</span>%</p>
+                    <p class="preciProbDataToday data"><span></span>%</p>
                 </div>
                 <div class="dewPointToday">
                     <img src="./media/weather-data/thermometer-raindrop.svg">
                     <p class="label">Dew Point</p>
-                    <p class="dewPointDataToday data"><span>22</span>°</p>
+                    <p class="dewPointDataToday data"><span></span>°</p>
                 </div>
                 <div class="pressureToday">
                     <img src="./media/weather-data/barometer.svg">
                     <p class="label">Pressure</p>
-                    <p class="pressureDataToday data"><span>1011</span> mmHg</p>
+                    <p class="pressureDataToday data"><span></span> mmHg</p>
                 </div>
                 <div class="windToday">
                     <img src="./media/weather-data/wind-alert.svg">
                     <p class="label">Wind</p>
-                    <p class="windDataToday data"><span>13</span> km/h</p>
+                    <p class="windDataToday data"><span class="dataInput">13</span> <span class="units"></span></p>
                 </div>
                 <div class="uvIndexToday">
                     <img src="./media/weather-data/uv-index/uv-index-today.svg">
                     <p class="label">UV Index</p>
-                    <p class="uvIndexDataToday data"><span>10</span> / 11</p>
+                    <p class="uvIndexDataToday data"><span></span> / 11</p>
                 </div>
             </div>
             <div class="descriptionToday">
-                <p class="descriptionDataToday">Partly cloudy throughout the day with strong storms possible.</p>
+                <p class="descriptionDataToday"></p>
             </div>
         </section>
         <section class="nextDaysInfo">
             <p class="nextDaysTitle">7 Day Weather</p>
             <div class="daysInfoDIV">
-                <div class="daysInfo day0">
+                <div id='day0' class="daysInfo selected">
                     <p class="date day0">Mon <br> 11</p>
                     <div class="highLow day0">
                         <div class="high day0">
@@ -171,9 +171,9 @@
                         <img src="./media/weather-data/raindrops.svg">
                         <p class="rainChance day0"><span>70</span>%</p>
                     </div>
-                    <button id="day0" class="moreInfoButton">+</button>
+                    <button id="day0" class="moreInfoButton">-</button>
                 </div>
-                <div class="daysInfo day1">
+                <div id='day1' class="daysInfo">
                     <p class="date day1">Tue <br> 12</p>
                     <div class="highLow day0">
                         <div class="high day0">
@@ -195,7 +195,7 @@
                     </div>
                     <button id="day1" class="moreInfoButton">+</button>
                 </div>
-                <div class="daysInfo day2">
+                <div id='day2' class="daysInfo">
                     <p class="date day2">Wed <br> 13</p>
                     <div class="highLow day0">
                         <div class="high day0">
@@ -217,7 +217,7 @@
                     </div>
                     <button id="day2" class="moreInfoButton">+</button>
                 </div>
-                <div class="daysInfo day3">
+                <div id='day3' class="daysInfo">
                     <p class="date day3">Thu <br> 14</p>
                     <div class="highLow day0">
                         <div class="high day0">
@@ -239,7 +239,7 @@
                     </div>
                     <button id="day3" class="moreInfoButton">+</button>
                 </div>
-                <div class="daysInfo day4">
+                <div id='day4' class="daysInfo">
                     <p class="date day4">Fri <br> 15</p>
                     <div class="highLow day0">
                         <div class="high day0">
@@ -261,7 +261,7 @@
                     </div>
                     <button id="day4" class="moreInfoButton">+</button>
                 </div>
-                <div class="daysInfo day5">
+                <div id='day5' class="daysInfo">
                     <p class="date day5">Sat <br> 16</p>
                     <div class="highLow day0">
                         <div class="high day0">
@@ -283,7 +283,7 @@
                     </div>
                     <button id="day5" class="moreInfoButton">+</button>
                 </div>
-                <div class="daysInfo day6">
+                <div id='day6' class="daysInfo">
                     <p class="date day6">Sun <br> 17</p>
                     <div class="highLow day0">
                         <div class="high day0">

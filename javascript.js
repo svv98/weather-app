@@ -1,8 +1,11 @@
 let currentDegree = "metric";
 let searchedCity = " ";
 let currentWeatherData;
+let currentID = 0;
+const mainInfo = document.querySelector('main');
 const header = document.querySelector('header');
 const searchCityForm = document.querySelector('.search');
+const nextDaysInfo = document.querySelector('.nextDaysInfo');
 header.addEventListener('click', (event)=>{
   if(event.target.closest('.dropdownMenu')){
     let menu = event.target.closest('.dropdownMenu');
@@ -45,6 +48,24 @@ searchCityForm.addEventListener('submit', function(event){
   }
   searchCityForm.reset();
 });
+nextDaysInfo.addEventListener('click', (event)=>{
+  if(event.target.closest('.daysInfo')){
+    let selectedDay = event.target.closest('.daysInfo');
+    let id = parseInt(selectedDay.getAttribute('id')[3]);
+    let currentDay = document.querySelector('.daysInfo.selected');
+    currentDay.classList.toggle('selected');
+    selectedDay.classList.toggle('selected');
+    currentDay.querySelector('button').textContent='+';
+    selectedDay.querySelector('button').textContent='-';
+    if(id!==currentID){
+      currentID=id;
+      todaysWeatherAPI(currentID);
+    }
+  }
+});
+
+
+mainInfo.style = 'visibility: hidden;';
 
 async function fetchData(city, degree) {
   const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/next7days?unitGroup=${degree}&key=NR5QUCS2CDR3W7FMEY6KGLPLV&contentType=json`);
@@ -54,6 +75,9 @@ async function fetchData(city, degree) {
     currentWeatherAPI();
     todaysWeatherAPI(0);
     nextDaysWeatherAPI();
+    mainInfo.style = 'visibility: visible;';
+    document.querySelector('.daysInfo.selected').classList.toggle('selected');
+    document.querySelector('#day0.daysInfo').classList.toggle('selected');
   });
 }
 
@@ -116,16 +140,17 @@ function todaysDocElements(){
   const todaysHigh = document.querySelector(".highTempToday>span");
   const todaysLow = document.querySelector(".lowTempToday>span");
   const todaysHumidity = document.querySelector(".humidityDataToday>span");
-  const todaysDewPoint = document.querySelector(".preciProbDataToday>span");
-  const todaysWind = document.querySelector(".dewPointDataToday>span");
-  const todaysRainChance = document.querySelector(".pressureDataToday>span");
-  const todaysPressure = document.querySelector(".windDataToday>span");
+  const todaysDewPoint = document.querySelector(".dewPointDataToday>span");
+  const todaysWind = document.querySelector(".windDataToday>.dataInput");
+  const todaysWindUnits = document.querySelector(".windDataToday>.units");
+  const todaysRainChance = document.querySelector(".preciProbDataToday>span");
+  const todaysPressure = document.querySelector(".pressureDataToday>span");
   const todaysUVIndex = document.querySelector(".uvIndexDataToday>span");
   const todaysDescription = document.querySelector(".descriptionDataToday");
 
   return {todaysCity, todaysDate, todaysFeelsLike, todaysMoon, todaysMoonIcon, todaysSunrise, 
     todaysSunset, todaysHigh, todaysLow, todaysHumidity, todaysDewPoint, 
-    todaysWind, todaysRainChance, todaysPressure, todaysUVIndex, todaysDescription}
+    todaysWind, todaysWindUnits, todaysRainChance, todaysPressure, todaysUVIndex, todaysDescription}
 }
 const todaysWeatherAPI = function(day){
   let todaysDocEl = todaysDocElements();
@@ -142,8 +167,9 @@ const todaysWeatherAPI = function(day){
   todaysDocEl.todaysHumidity.textContent = roundNumber(currentWeatherData.days[day].humidity);
   todaysDocEl.todaysDewPoint.textContent = roundNumber(currentWeatherData.days[day].dew);
   todaysDocEl.todaysWind.textContent = roundNumber(currentWeatherData.days[day].windspeed);
+  todaysDocEl.todaysWindUnits.textContent = (currentDegree=='metric') ? 'km/h' : 'mph';
   todaysDocEl.todaysRainChance.textContent = roundNumber(currentWeatherData.days[day].precipprob);
-  todaysDocEl.todaysPressure.textContent = roundNumber(currentWeatherData.days[day].pressure);
+  todaysDocEl.todaysPressure.textContent = roundNumber(currentWeatherData.days[day].pressure /1.333);
   todaysDocEl.todaysUVIndex.textContent = currentWeatherData.days[day].uvindex;
   todaysDocEl.todaysDescription.textContent = currentWeatherData.days[day].description;
   sunLine();
@@ -222,8 +248,6 @@ const nextDaysWeatherAPI = function(day){
     return `${date.toDateString().slice(0,3)} <br> ${date.getDate()}`;
   }
 };
-
-
 
 function roundNumber(num){
   return Math.round(num)

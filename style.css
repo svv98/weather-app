@@ -463,6 +463,14 @@ img.currentConditionIcon{
     text-shadow: 0 0 5px black;
     cursor: pointer;
 }
+.daysInfo.selected{
+    background-color: rgb(187, 187, 187);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.212);
+}
+.daysInfo.selected .moreInfoButton{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 5px black;
+}
 
 @media(width>=500px){
     .search input{
@@ -849,3 +857,4 @@ img.currentConditionIcon{
         font-size: 30px;
     }
 }
+
